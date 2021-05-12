@@ -93,7 +93,7 @@ public class Services extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, 20));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 200, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Drink Name");
@@ -131,7 +131,6 @@ public class Services extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, -1, -1));
 
-        table.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
