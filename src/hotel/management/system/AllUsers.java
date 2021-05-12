@@ -46,7 +46,7 @@ public class AllUsers extends javax.swing.JFrame {
         setBackground(new java.awt.Color(204, 0, 51));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manage.setBackground(new java.awt.Color(255, 204, 0));
+        manage.setBackground(new java.awt.Color(255, 102, 102));
         manage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         manage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/room.png"))); // NOI18N
         manage.setText("List Of Room");
@@ -55,9 +55,9 @@ public class AllUsers extends javax.swing.JFrame {
                 manageActionPerformed(evt);
             }
         });
-        getContentPane().add(manage, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 200, 50));
+        getContentPane().add(manage, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 200, 50));
 
-        checkIn.setBackground(new java.awt.Color(255, 204, 0));
+        checkIn.setBackground(new java.awt.Color(204, 204, 0));
         checkIn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkin.png"))); // NOI18N
         checkIn.setText("Check In");
@@ -66,9 +66,9 @@ public class AllUsers extends javax.swing.JFrame {
                 checkInActionPerformed(evt);
             }
         });
-        getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 180, 50));
+        getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 180, 50));
 
-        checkOut.setBackground(new java.awt.Color(255, 204, 0));
+        checkOut.setBackground(new java.awt.Color(204, 204, 0));
         checkOut.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkout.png"))); // NOI18N
         checkOut.setText("Check Out");
@@ -77,7 +77,7 @@ public class AllUsers extends javax.swing.JFrame {
                 checkOutActionPerformed(evt);
             }
         });
-        getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 180, -1, 50));
+        getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, 50));
 
         logout.setBackground(new java.awt.Color(0, 0, 153));
         logout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -88,7 +88,7 @@ public class AllUsers extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 120, 40));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 120, 40));
 
         exit.setBackground(new java.awt.Color(255, 0, 0));
         exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -99,14 +99,14 @@ public class AllUsers extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 480, 90, 40));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 510, 90, 40));
 
-        jLabel2.setFont(new java.awt.Font("Engravers MT", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("WELCOME TO HOTEL Booking SYSTEM");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 670, -1));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel2.setText("WELCOME TO HOTEL BOOKING SYSTEM");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 740, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 204, 0));
+        jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addroom.png"))); // NOI18N
         jButton1.setText("Add Room");
@@ -120,9 +120,9 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 240, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 240, 50));
 
-        jButton3.setBackground(new java.awt.Color(255, 204, 0));
+        jButton3.setBackground(new java.awt.Color(204, 204, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         jButton3.setText("List of Customer Check Out");
@@ -131,9 +131,9 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 280, -1, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 380, -1, 50));
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 0));
+        jButton2.setBackground(new java.awt.Color(204, 204, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         jButton2.setText("List of Customer Check In");
@@ -142,19 +142,29 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 280, 310, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 310, 50));
 
-        jButton5.setBackground(new java.awt.Color(255, 204, 0));
+        jButton5.setBackground(new java.awt.Color(204, 204, 0));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
         jButton5.setText("Services");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 380, 160, 50));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 300, 160, 50));
 
-        jButton4.setBackground(new java.awt.Color(255, 204, 0));
+        jButton4.setBackground(new java.awt.Color(204, 204, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat.png"))); // NOI18N
         jButton4.setText("Statistics");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 150, 50));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 150, 50));
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -224,6 +234,16 @@ public class AllUsers extends javax.swing.JFrame {
        setVisible(false);
         new CustomersDetailsBills().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+
+       new Services().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       setVisible(false);
+       new Statistics().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

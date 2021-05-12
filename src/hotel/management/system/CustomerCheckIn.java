@@ -235,7 +235,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(204, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Close");
+        jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -348,7 +348,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
                     Query="INSERT INTO customer(Name,MobileNumber,Nationality,Gender,Email,IdType,IdNumber,NumberOfDaysStay,Address,CheckIn,RoomNumber,Bed,roomType,pricePerDay) "
                            + "" + "VALUES ('"+name+"','"+mobileNumber+"','"+nationality+"','"+gender+"','"+email+"','"+idType+"','"+idProof+"','"+noDays+"','"+address+"','"+checkIN+"','"+roomNo+"','"+bed+"','"+roomType+"','"+price+"')";
        
-                   InsertUpdateDelete.setData(Query,"You Check In Successfully!");
+                   InsertUpdateDelete.setData(Query,"Customer Check In Successfully!");
                    setVisible(false);
                    new CustomerCheckIn().setVisible(true);
                }

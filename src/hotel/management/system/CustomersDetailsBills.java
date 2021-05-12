@@ -88,28 +88,30 @@ public class CustomersDetailsBills extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Mobile Number", "Nationality", "Gender", "Email", "Id Proof", "Address", "Check In Date", "Room Number", "Bed", "Room Type", "Price Per Day", "Number Of Days Stay", "Total Amount", "Check Out Date"
+                "ID", "Name", "Mobile No.", "Nationality", "Gender", "Email", "ID Type", "ID No.", "Address", "CheckIn", "Room No.", "Bed", "Room Type", "Price Per Day", "No. Days", "TotalAmount", "CheckOut"
             }
         ));
+        jTable1.setColumnSelectionAllowed(true);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 175, 1344, 200));
 
         jButton2.setBackground(new java.awt.Color(204, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Exit");
+        jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 445, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 440, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkinlist.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -133,7 +135,7 @@ public class CustomersDetailsBills extends javax.swing.JFrame {
         {
                 while(rs.next())
                 {
-                    model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16)});
+                    model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),rs.getString(17)});
                 }
                 rs.close();
         }
@@ -155,7 +157,7 @@ public class CustomersDetailsBills extends javax.swing.JFrame {
         {
                 while(rs.next())
                 {
-                    model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16)});
+                    model.addRow(new Object[]{rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),rs.getString(17)});
                 }
                 rs.close();
         }
@@ -188,7 +190,7 @@ public class CustomersDetailsBills extends javax.swing.JFrame {
                   if(question == 0)
                   {
                       String deleteString = "DELETE FROM customer WHERE Id ='"+id+"'";
-                      InsertUpdateDelete.setData(deleteString,"\"Message Deleted Successfully!\" ");
+                      InsertUpdateDelete.setData(deleteString,"\"Deleted Successfully!\" ");
                       
                   }else
                   {
