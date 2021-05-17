@@ -277,6 +277,8 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 jTextField10.setText(rs.getString(13));
                 jTextField11.setText(rs.getString(12));
                 
+               try
+               {
                 SimpleDateFormat myFormat = new SimpleDateFormat("yyyy/MM/dd");
                 Calendar cal =Calendar.getInstance();
                 jTextField4.setText(myFormat.format(cal.getTime()));
@@ -302,6 +304,11 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(null, "Room Number is  not Booked or Room Number Does not Exist!");
                 }
+                      
+               }catch(Exception e){
+                   JOptionPane.showMessageDialog(null, "There is something wrong!");
+               }
+                
             }
         }
         catch(Exception e)

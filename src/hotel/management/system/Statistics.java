@@ -92,7 +92,7 @@ public class Statistics extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Total Rooms: ");
@@ -109,36 +109,36 @@ public class Statistics extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Date");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 125, 42, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 42, 20));
 
-        Date.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 149, 134, -1));
+        Date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 134, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Total Rooms Available");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 125, -1, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, -1, 20));
 
-        available.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(available, new org.netbeans.lib.awtextra.AbsoluteConstraints(292, 149, 164, -1));
+        available.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(available, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 164, -1));
 
-        occupied.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(occupied, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 149, 157, -1));
+        occupied.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(occupied, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 157, -1));
 
-        revenue.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(revenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(698, 149, 161, -1));
+        revenue.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(revenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 161, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Total Revenue");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(698, 125, -1, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setText("Total Rooms Occupied");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 125, -1, 20));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, -1, 20));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 215, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat.png"))); // NOI18N
         jLabel9.setText("jLabel9");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 230));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 240));
 
         pack();
         setLocationRelativeTo(null);

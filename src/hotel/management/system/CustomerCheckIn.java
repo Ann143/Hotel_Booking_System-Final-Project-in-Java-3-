@@ -335,9 +335,17 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         String roomType=(String)jComboBox4.getSelectedItem();
         String roomNo=(String)jComboBox3.getSelectedItem();
         String price =PriceTxt.getText();
-        String Query = "select max(Id) from customer";        
+        String Query = "select max(Id) from customer";  
+        
         try
         {
+            Integer.parseInt(mobileNumber); 
+            Integer.parseInt(idProof); 
+            Integer.parseInt(noDays); 
+            
+            
+            try
+            {
             ResultSet rs =Select.getData(Query);
             while(rs.next())
             {
@@ -353,11 +361,17 @@ public class CustomerCheckIn extends javax.swing.JFrame {
                    setVisible(false);
                    new CustomerCheckIn().setVisible(true);
                }
+            }   
+            }catch(SQLException e)
+            {
+                 JOptionPane.showMessageDialog(null, "Failed to connect to database");
             }
+            
+            
         }
         catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "You entered an invalid value! Please try again.");
         }
         
         
