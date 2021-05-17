@@ -39,7 +39,6 @@ public class Login extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         emailtxt = new javax.swing.JTextField();
         passtext = new javax.swing.JPasswordField();
-        jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hotelbg.jpg"))); // NOI18N
@@ -53,7 +52,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("Login");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 70, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 50, 30));
 
         loginBtn.setBackground(new java.awt.Color(153, 0, 0));
         loginBtn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -64,15 +63,15 @@ public class Login extends javax.swing.JFrame {
                 loginBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, 70, 20));
+        getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 70, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Email");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 40, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 40, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("Password");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 80, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 80, 20));
 
         emailtxt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         emailtxt.addActionListener(new java.awt.event.ActionListener() {
@@ -80,24 +79,13 @@ public class Login extends javax.swing.JFrame {
                 emailtxtActionPerformed(evt);
             }
         });
-        getContentPane().add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 160, 30));
+        getContentPane().add(emailtxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 160, 30));
 
         passtext.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        getContentPane().add(passtext, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 160, 30));
-
-        jButton4.setBackground(new java.awt.Color(255, 0, 0));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Exit");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 60, 30));
+        getContentPane().add(passtext, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 160, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg.PNG"))); // NOI18N
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 720, 440));
 
         pack();
         setLocationRelativeTo(null);
@@ -146,14 +134,6 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_loginBtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-         int a=JOptionPane.showConfirmDialog(null, "Do you really want to close application","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0){
-            System.exit(0);
-        }  
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -191,7 +171,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailtxt;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

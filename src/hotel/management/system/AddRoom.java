@@ -5,6 +5,7 @@
  */
 package hotel.management.system;
 
+import javax.swing.JOptionPane;
 import project.InsertUpdateDelete;
 
 /**
@@ -138,13 +139,16 @@ public class AddRoom extends javax.swing.JFrame {
         String Bed=(String)bed.getSelectedItem();
         String Price=price.getText();
         
-       String Query="INSERT INTO room(RoomNumber,RoomType,Bed,Price,Status) " + "VALUES ('"+roomNo+"','"+roomType+"','"+Bed+"','"+Price+"','Not Booked')";
-       InsertUpdateDelete.setData(Query, "Succesfully Added!");
+        try
+        {
+               String Query="INSERT INTO room(RoomNumber,RoomType,Bed,Price,Status) " + "VALUES ('"+roomNo+"','"+roomType+"','"+Bed+"','"+Price+"','Not Booked')";
+               InsertUpdateDelete.setData(Query, "Succesfully Added!");
+        }catch(Exception e){
+              JOptionPane.showMessageDialog(null,"Try Again");
+        }
+    
        setVisible(false);
        new AddRoom().setVisible(true);
-       
-        
-        
         
     }//GEN-LAST:event_addbtnActionPerformed
 

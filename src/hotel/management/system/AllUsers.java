@@ -82,24 +82,26 @@ public class AllUsers extends javax.swing.JFrame {
         logout.setBackground(new java.awt.Color(0, 0, 153));
         logout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout.png"))); // NOI18N
         logout.setText("Logout");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 120, 40));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 140, 40));
 
-        exit.setBackground(new java.awt.Color(255, 0, 0));
+        exit.setBackground(new java.awt.Color(255, 102, 102));
         exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 255, 255));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         exit.setText("Exit");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 510, 90, 40));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 110, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
@@ -157,14 +159,14 @@ public class AllUsers extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(204, 204, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat_icon.png"))); // NOI18N
         jButton4.setText("Statistics");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 150, 50));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 170, 50));
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 0));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -177,6 +179,7 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void manageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
         new ManageRoom().setVisible(true);
     }//GEN-LAST:event_manageActionPerformed
 
@@ -203,7 +206,7 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void checkInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInActionPerformed
         // TODO add your handling code here:
-        
+         setVisible(false);
         new CustomerCheckIn().setVisible(true);
         
         
@@ -211,6 +214,7 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
         // TODO add your handling code here:
+         setVisible(false);
         new CustomerCheckOut().setVisible(true);
         
         
@@ -221,27 +225,29 @@ public class AllUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ComponentHidden
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         new ListCheckIn().setVisible(true);  
+        setVisible(false);
+        new ListCheckIn().setVisible(true);  
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         new AddRoom().setVisible(true);        
+        setVisible(false);
+        new AddRoom().setVisible(true);        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       setVisible(false);
+        setVisible(false);
         new CustomersDetailsBills().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-
+       setVisible(false);
        new Services().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+       setVisible(false);
        new Statistics().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
