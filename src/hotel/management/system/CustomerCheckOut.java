@@ -300,10 +300,6 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                     bed=rs.getString(12);
                     
                 }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "Room Number Does not Exist!");
-                }
                       
                }catch(SQLException e){
                    JOptionPane.showMessageDialog(null, "Failed to connect to database.");
