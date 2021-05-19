@@ -71,7 +71,6 @@ public class Statistics extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -79,12 +78,12 @@ public class Statistics extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Statistics");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -92,53 +91,53 @@ public class Statistics extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Total Rooms: ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 90, -1, -1));
 
-        totalRoom.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        totalRoom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         totalRoom.setText("10");
         totalRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalRoomActionPerformed(evt);
             }
         });
-        getContentPane().add(totalRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 87, 50, -1));
+        getContentPane().add(totalRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 50, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Date");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 42, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 60, 20));
 
-        Date.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 134, -1));
+        Date.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 160, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Total Rooms Available");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, -1, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, 20));
 
-        available.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(available, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 164, -1));
+        available.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(available, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 190, -1));
 
-        occupied.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(occupied, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 150, 157, -1));
+        occupied.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(occupied, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 200, -1));
 
-        revenue.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(revenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 161, -1));
+        revenue.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(revenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 160, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Total Revenue");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, -1, 20));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Total Rooms Occupied");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, -1, 20));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, 20));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 215, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat.png"))); // NOI18N
         jLabel9.setText("jLabel9");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 240));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 310));
 
         pack();
         setLocationRelativeTo(null);

@@ -5,7 +5,14 @@
  */
 package hotel.management.system;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import project.Select;
 
 /**
  *
@@ -18,8 +25,16 @@ public class AllUsers extends javax.swing.JFrame {
      */
     public AllUsers() {
         initComponents();
+        
+      table.getTableHeader().setFont( new Font( "Dialog" , Font.BOLD, 14 ));
+      JTableHeader tableHeader = table.getTableHeader();
+      tableHeader.setForeground(Color.black);
+   
+    
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,10 +55,21 @@ public class AllUsers extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 0, 51));
+        setBackground(new java.awt.Color(255, 153, 153));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                formComponentShown(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         manage.setBackground(new java.awt.Color(255, 102, 102));
@@ -55,9 +81,9 @@ public class AllUsers extends javax.swing.JFrame {
                 manageActionPerformed(evt);
             }
         });
-        getContentPane().add(manage, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 200, 50));
+        getContentPane().add(manage, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 320, 50));
 
-        checkIn.setBackground(new java.awt.Color(204, 204, 0));
+        checkIn.setBackground(new java.awt.Color(255, 51, 102));
         checkIn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkin.png"))); // NOI18N
         checkIn.setText("Check In");
@@ -66,9 +92,9 @@ public class AllUsers extends javax.swing.JFrame {
                 checkInActionPerformed(evt);
             }
         });
-        getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 180, 50));
+        getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 320, 50));
 
-        checkOut.setBackground(new java.awt.Color(204, 204, 0));
+        checkOut.setBackground(new java.awt.Color(255, 51, 102));
         checkOut.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkout.png"))); // NOI18N
         checkOut.setText("Check Out");
@@ -77,7 +103,7 @@ public class AllUsers extends javax.swing.JFrame {
                 checkOutActionPerformed(evt);
             }
         });
-        getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, -1, 50));
+        getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 50));
 
         logout.setBackground(new java.awt.Color(0, 0, 153));
         logout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -89,7 +115,7 @@ public class AllUsers extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 140, 40));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 140, 50));
 
         exit.setBackground(new java.awt.Color(255, 102, 102));
         exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -101,12 +127,12 @@ public class AllUsers extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 510, 110, 40));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, 110, 50));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
         jLabel2.setText("WELCOME TO HOTEL BOOKING SYSTEM");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 740, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 760, 60));
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -122,9 +148,9 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, 240, 50));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 320, 50));
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 0));
+        jButton3.setBackground(new java.awt.Color(255, 51, 102));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         jButton3.setText("List of Customer Check Out");
@@ -133,9 +159,9 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 380, -1, 50));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 320, 50));
 
-        jButton2.setBackground(new java.awt.Color(204, 204, 0));
+        jButton2.setBackground(new java.awt.Color(255, 51, 102));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         jButton2.setText("List of Customer Check In");
@@ -144,9 +170,9 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 310, 50));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 320, 50));
 
-        jButton5.setBackground(new java.awt.Color(204, 204, 0));
+        jButton5.setBackground(new java.awt.Color(255, 51, 102));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
         jButton5.setText("Services");
@@ -155,9 +181,9 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 300, 160, 50));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 320, 50));
 
-        jButton4.setBackground(new java.awt.Color(204, 204, 0));
+        jButton4.setBackground(new java.awt.Color(255, 51, 102));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat_icon.png"))); // NOI18N
         jButton4.setText("Statistics");
@@ -166,12 +192,42 @@ public class AllUsers extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 170, 50));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 320, 50));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 204, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        table.setBackground(new java.awt.Color(255, 153, 153));
+        table.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Room Number", "Room Type", "Bed", "Price", "Status"
+            }
+        ));
+        table.setSelectionBackground(new java.awt.Color(255, 51, 102));
+        table.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                tableComponentShown(evt);
+            }
+        });
+        jScrollPane2.setViewportView(table);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 750, 330));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("List of Rooms");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, 250, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 310, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hotelbg.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1340, 640));
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 830, 490));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg.PNG"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1220, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -179,8 +235,7 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void manageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
-        new ManageRoom().setVisible(true);
+        new AllUsers().setVisible(true);
     }//GEN-LAST:event_manageActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
@@ -251,6 +306,34 @@ public class AllUsers extends javax.swing.JFrame {
        new Statistics().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+        ResultSet rs=Select.getData("select * from room");
+        DefaultTableModel model =(DefaultTableModel)table.getModel();
+        try
+        {
+            while(rs.next())
+            {
+                model.addRow(new Object[]{rs.getString("RoomNumber"),rs.getString("RoomType"),rs.getString("Bed"),rs.getString("Price"),rs.getString("Status")});              
+            }
+            rs.close();
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_formComponentShown
+
+  
+    private void tableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableComponentShown
+    
+   
+    }//GEN-LAST:event_tableComponentShown
+
     /**
      * @param args the command line arguments
      */
@@ -297,7 +380,13 @@ public class AllUsers extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton logout;
     private javax.swing.JButton manage;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }
