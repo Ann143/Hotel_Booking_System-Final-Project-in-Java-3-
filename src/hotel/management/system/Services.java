@@ -286,9 +286,7 @@ public class Services extends javax.swing.JFrame {
                   {
                       new Services().setVisible(true);
                   }
-                       
-                  
-                   
+                          
               }catch(Exception e)
               {
                    JOptionPane.showMessageDialog(null, e);

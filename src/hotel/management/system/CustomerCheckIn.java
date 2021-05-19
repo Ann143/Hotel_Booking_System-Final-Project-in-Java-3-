@@ -51,8 +51,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
-        }
-        
+        }  
     }
 
     /**
@@ -342,7 +341,6 @@ public class CustomerCheckIn extends javax.swing.JFrame {
             Integer.parseInt(idProof); 
             Integer.parseInt(noDays); 
             
-            
             try
             {
             ResultSet rs =Select.getData(Query);
@@ -364,9 +362,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
             }catch(SQLException e)
             {
                  JOptionPane.showMessageDialog(null, "Failed to connect to database");
-            }
-            
-            
+            }    
         }
         catch(Exception e)
         {

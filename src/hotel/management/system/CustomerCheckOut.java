@@ -289,6 +289,7 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 int noOfDayStay=(int)(difference/(1000*60*60*24));
                 if(noOfDayStay==0)
                 {
+                    
                     int numOfStay=Integer.parseInt(rs.getString(15));
                     jTextField7.setText(rs.getString(15));
                     float price =Float.parseFloat(jTextField6.getText());
@@ -301,13 +302,15 @@ public class CustomerCheckOut extends javax.swing.JFrame {
                 }
                 else
                 {
-                    JOptionPane.showMessageDialog(null, "Room Number is  not Booked or Room Number Does not Exist!");
+                    JOptionPane.showMessageDialog(null, "Room Number Does not Exist!");
                 }
                       
                }catch(SQLException e){
                    JOptionPane.showMessageDialog(null, "Failed to connect to database.");
                }
                 
+            }else{
+                 JOptionPane.showMessageDialog(null, "Room Number is  not Booked or Room Number Does not Exist!");
             }
         }
         catch(Exception e)
@@ -351,17 +354,31 @@ public class CustomerCheckOut extends javax.swing.JFrame {
         String mobilenumber=jTextField5.getText();
         String email =jTextField9.getText();
         
+        try
+        {
+            
         String checkout =jTextField4.getText();
         String numberOfDaysStay = jTextField7.getText();
         String totalAmount =jTextField8.getText();
         roomNo=jTextField1.getText();
+        
+        try
+        {
         Query= "update customer set NumberOfDaysStay = '"+numberOfDaysStay+"', TotalAmount='"+totalAmount+"', CheckOut='"+checkout+"' where Id = '"+id+"'";
         InsertUpdateDelete.setData(Query, "");
         Query = "update room set Status ='Not Booked' where RoomNumber = '"+roomNo+"'";
-        InsertUpdateDelete.setData(Query,"");
-
-        JOptionPane.showMessageDialog(null, "Customer Check Out Successfully!","Select",JOptionPane.YES_NO_OPTION);
+        InsertUpdateDelete.setData(Query,"Customer Check Out Successfully!");
         
+        }catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Cannot connect to database!");
+        }
+       
+        }catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+      
         setVisible(false);
         new CustomerCheckOut().setVisible(true);
         //call the function search button and displays the information

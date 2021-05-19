@@ -29,8 +29,6 @@ public class AllUsers extends javax.swing.JFrame {
       table.getTableHeader().setFont( new Font( "Dialog" , Font.BOLD, 14 ));
       JTableHeader tableHeader = table.getTableHeader();
       tableHeader.setForeground(Color.black);
-   
-    
     }
 
     
@@ -321,11 +319,7 @@ public class AllUsers extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
-        
-        
-        
-        
-        
+         
     }//GEN-LAST:event_formComponentShown
 
   
