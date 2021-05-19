@@ -92,7 +92,7 @@ public class AllUsers extends javax.swing.JFrame {
                 checkInActionPerformed(evt);
             }
         });
-        getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 320, 50));
+        getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 50));
 
         checkOut.setBackground(new java.awt.Color(255, 51, 102));
         checkOut.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -103,7 +103,7 @@ public class AllUsers extends javax.swing.JFrame {
                 checkOutActionPerformed(evt);
             }
         });
-        getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 50));
+        getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 320, 50));
 
         logout.setBackground(new java.awt.Color(0, 0, 153));
         logout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
