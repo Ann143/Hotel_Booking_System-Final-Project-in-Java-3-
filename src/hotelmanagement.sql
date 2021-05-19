@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2021 at 08:59 AM
+-- Generation Time: May 19, 2021 at 03:33 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -47,15 +47,6 @@ CREATE TABLE `customer` (
   `CheckOut` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`Id`, `Name`, `MobileNumber`, `Nationality`, `Gender`, `Email`, `IdType`, `IdNumber`, `Address`, `CheckIn`, `RoomNumber`, `Bed`, `roomType`, `pricePerDay`, `NumberOfDaysStay`, `TotalAmount`, `CheckOut`) VALUES
-(30, 'Ann Telez', '09229265447', 'Filipino', 'Female', 'ann@gmail.com', 'SchoolId', 19104915, 'Nasipit Talamban', '2021/05/10', '2', 'Triple', 'Air Condition', 900, 3, '2700.0', '2021/05/10'),
-(35, 'Ann Telez', '09229265447', 'Filipino', 'Female', 'ann@gmail.com', 'School ID', 19104915, 'Nasipit Talamban', '2021/05/12', '01', 'Single', 'Air Condition', 200, 3, '600.0', '2021/05/12'),
-(36, 'Judy Ann Arquisal', '0945738453', 'Filipino', 'Female', 'judy@gmail.com', 'School ID', 19104918, 'Talamban', '2021/05/12', '04', 'Single', 'Air Condition', 400, 2, '800.0', '2021/05/12');
-
 -- --------------------------------------------------------
 
 --
@@ -76,8 +67,7 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`foodId`, `foodName`, `foodPrice`, `drinkName`, `drinkPrice`, `total`) VALUES
-(1, 'Pan', 10, 'Coke', 12, 22),
-(5, 'Fried chiken with 2 cups of rice', 150, 'Coke', 15, 165);
+(1, 'Pan', 10, 'Coke', 12, 22);
 
 -- --------------------------------------------------------
 
@@ -108,7 +98,8 @@ INSERT INTO `room` (`RoomId`, `RoomNumber`, `RoomType`, `Bed`, `Price`, `Status`
 (91, '07', 'Air Condition', 'Single', 300, 'Not Booked'),
 (92, '08', 'Not Air Condition', 'Double', 800, 'Not Booked'),
 (93, '09', 'Air Condition', 'Triple', 2500, 'Not Booked'),
-(94, '10', 'Air Condition', 'Single', 500, 'Not Booked');
+(94, '10', 'Air Condition', 'Single', 500, 'Not Booked'),
+(95, '11', 'Air Condition', 'Single', 300, 'Not Booked');
 
 --
 -- Indexes for dumped tables
@@ -140,7 +131,7 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `food`
@@ -152,7 +143,7 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `RoomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
