@@ -27,16 +27,16 @@ public class AllUsers extends javax.swing.JFrame {
     /**
      * Creates new form AllUsers
      */
+     static int room;
+   
     public AllUsers() {
         initComponents();
-        
-      table.getTableHeader().setFont( new Font( "Dialog" , Font.BOLD, 14 ));
-      JTableHeader tableHeader = table.getTableHeader();
-      tableHeader.setForeground(Color.black);
+
+        table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 14));
+        JTableHeader tableHeader = table.getTableHeader();
+        tableHeader.setForeground(Color.black);
     }
 
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -247,9 +247,8 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-        int a=JOptionPane.showConfirmDialog(null, "Do you really want to logout?","Select",JOptionPane.YES_NO_OPTION);
-        if (a==0)
-        {
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to logout?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
             setVisible(false);
             new Login().setVisible(true);
         }
@@ -257,29 +256,28 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
-        int a=JOptionPane.showConfirmDialog(null, "Do you really want to close application?","Select",JOptionPane.YES_NO_OPTION);
-        if (a==0)
-        {
-           System.exit(0);
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close application?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            System.exit(0);
         }
-        
-        
+
+
     }//GEN-LAST:event_exitActionPerformed
 
     private void checkInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInActionPerformed
         // TODO add your handling code here:
-         setVisible(false);
+        setVisible(false);
         new CustomerCheckIn().setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_checkInActionPerformed
 
     private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
         // TODO add your handling code here:
-         setVisible(false);
+        setVisible(false);
         new CustomerCheckOut().setVisible(true);
-        
-        
+
+
     }//GEN-LAST:event_checkOutActionPerformed
 
     private void jButton1ComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jButton1ComponentHidden
@@ -288,14 +286,14 @@ public class AllUsers extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
-        new ListCheckIn().setVisible(true);  
-        
-        
+        new ListCheckIn().setVisible(true);
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-        new AddRoom().setVisible(true);        
+        new AddRoom().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -304,85 +302,126 @@ public class AllUsers extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       setVisible(false);
-       new Services().setVisible(true);
+        setVisible(false);
+        new Services().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       setVisible(false);
-       new Statistics().setVisible(true);
+        setVisible(false);
+        new Statistics().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
-        ResultSet rs=Select.getData("select * from room");
-        DefaultTableModel model =(DefaultTableModel)table.getModel();
-        try
-        {
-            while(rs.next())
-            {
-                model.addRow(new Object[]{rs.getString("RoomNumber"),rs.getString("RoomType"),rs.getString("Bed"),rs.getString("Price"),rs.getString("Status")});              
+        ResultSet rs = Select.getData("select * from room");
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        try {
+            while (rs.next()) {
+                model.addRow(new Object[]{rs.getString("RoomNumber"), rs.getString("RoomType"), rs.getString("Bed"), rs.getString("Price"), rs.getString("Status")});
             }
             rs.close();
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-         
+
     }//GEN-LAST:event_formComponentShown
 
-  
+
     private void tableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableComponentShown
-    
-   
+
+
     }//GEN-LAST:event_tableComponentShown
+     
  
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
-        // TODO add your handling code here:
-        
 
         DefaultTableModel model = (DefaultTableModel) this.table.getModel();
-        int index =table.getSelectedRow();
+        int index = table.getSelectedRow();
         JTable source = (JTable) evt.getSource();
         int row = source.rowAtPoint(evt.getPoint());
         int roomNumber = parseInt(table.getModel().getValueAt(row, 0).toString());
+        room = roomNumber;
         
-       try
-        {
-              int select = index; 
-              if (select == index){
-              model.removeRow(index);
-              int question = JOptionPane.showConfirmDialog(null, "Do really want to delete this data?","Select",JOptionPane.YES_NO_OPTION);
-              try
-              {
-                  //Delete the data from database
-                  if(question == 0)
-                  {
-                      String deleteString = "DELETE FROM room WHERE roomNumber ='"+roomNumber+"'";
-                      InsertUpdateDelete.setData(deleteString,"\"Deleted Successfully!\" ");
-                      
-                  }else
-                  {
-                      new AllUsers().setVisible(true);
-                  }
-                          
-              }catch(Exception e)
-              {
-                   JOptionPane.showMessageDialog(null, e);
-              }
-             
-            }else {
-              JOptionPane.showMessageDialog(null, "Unable To Delete");
-        }
-           
-        }
-        catch(Exception e)
-        {
+        JCheckBox update = new JCheckBox("UPDATE");
+        JCheckBox delete = new JCheckBox("DELETE");
+        Object[] options = {update, delete, "Yes"};
+        int x = JOptionPane.showOptionDialog(null, " ",
+                "SELECT AN OPTION!", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+
+        System.out.println(index);
+        try {
+                try {
+                    //Delete the data from database
+                    if (delete.isSelected() && x != -1) {
+                        String deleteString = "DELETE FROM room WHERE RoomNumber ='" + roomNumber + "'";
+                        InsertUpdateDelete.setData(deleteString, "\"Deleted Successfully!\" ");
+                        
+                        int select = index;
+                        if (select == index) {
+                            model.removeRow(index);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Unable To Delete");
+                        }
+
+
+                    } else if (update.isSelected() && x != -1) {
+                           
+                           new UpdateRoom().setVisible(true);
+                           this.setVisible(false);
+                         
+                    }
+
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e);
+                }
+
+        
+
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        
+
+//        DefaultTableModel model = (DefaultTableModel) this.table.getModel();
+//        int index =table.getSelectedRow();
+//        JTable source = (JTable) evt.getSource();
+//        int row = source.rowAtPoint(evt.getPoint());
+//        int roomNumber = parseInt(table.getModel().getValueAt(row, 0).toString());
+//        
+//       try
+//        {
+//              int select = index; 
+//              if (select == index){
+//              model.removeRow(index);
+//              int question = JOptionPane.showConfirmDialog(null, "Do really want to delete this data?","Select",JOptionPane.YES_NO_OPTION);
+//              try
+//              {
+//                  //Delete the data from database
+//                  if(question == 0)
+//                  {
+//                      String deleteString = "DELETE FROM room WHERE roomNumber ='"+roomNumber+"'";
+//                      InsertUpdateDelete.setData(deleteString,"\"Deleted Successfully!\" ");
+//                      
+//                  }else
+//                  {
+//                      new AllUsers().setVisible(true);
+//                  }
+//                          
+//              }catch(Exception e)
+//              {
+//                   JOptionPane.showMessageDialog(null, e);
+//              }
+//             
+//            }else {
+//              JOptionPane.showMessageDialog(null, "Unable To Delete");
+//        }
+//           
+//        }
+//        catch(Exception e)
+//        {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+
     }//GEN-LAST:event_tableMouseClicked
- 
+
     /**
      * @param args the command line arguments
      */
