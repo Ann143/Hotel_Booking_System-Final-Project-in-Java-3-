@@ -7,11 +7,15 @@ package hotel.management.system;
 
 import java.awt.Color;
 import java.awt.Font;
+import static java.lang.Integer.parseInt;
 import java.sql.ResultSet;
+import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import project.InsertUpdateDelete;
 import project.Select;
 
 /**
@@ -70,7 +74,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        manage.setBackground(new java.awt.Color(255, 102, 102));
+        manage.setBackground(new java.awt.Color(255, 153, 153));
         manage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         manage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/room.png"))); // NOI18N
         manage.setText("List Of Room");
@@ -81,7 +85,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().add(manage, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 320, 50));
 
-        checkIn.setBackground(new java.awt.Color(255, 51, 102));
+        checkIn.setBackground(new java.awt.Color(255, 153, 153));
         checkIn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkin.png"))); // NOI18N
         checkIn.setText("Check In");
@@ -92,7 +96,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 50));
 
-        checkOut.setBackground(new java.awt.Color(255, 51, 102));
+        checkOut.setBackground(new java.awt.Color(255, 153, 153));
         checkOut.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkout.png"))); // NOI18N
         checkOut.setText("Check Out");
@@ -132,7 +136,7 @@ public class AllUsers extends javax.swing.JFrame {
         jLabel2.setText("WELCOME TO HOTEL BOOKING SYSTEM");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 760, 60));
 
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
+        jButton1.setBackground(new java.awt.Color(255, 153, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addroom.png"))); // NOI18N
         jButton1.setText("Add Room");
@@ -148,7 +152,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 320, 50));
 
-        jButton3.setBackground(new java.awt.Color(255, 51, 102));
+        jButton3.setBackground(new java.awt.Color(255, 153, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         jButton3.setText("List of Customer Check Out");
@@ -159,7 +163,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 320, 50));
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 102));
+        jButton2.setBackground(new java.awt.Color(255, 153, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
         jButton2.setText("List of Customer Check In");
@@ -170,7 +174,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 320, 50));
 
-        jButton5.setBackground(new java.awt.Color(255, 51, 102));
+        jButton5.setBackground(new java.awt.Color(255, 153, 153));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
         jButton5.setText("Services");
@@ -181,7 +185,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 320, 50));
 
-        jButton4.setBackground(new java.awt.Color(255, 51, 102));
+        jButton4.setBackground(new java.awt.Color(255, 153, 153));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat_icon.png"))); // NOI18N
         jButton4.setText("Statistics");
@@ -204,6 +208,11 @@ public class AllUsers extends javax.swing.JFrame {
             }
         ));
         table.setSelectionBackground(new java.awt.Color(255, 51, 102));
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
         table.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 tableComponentShown(evt);
@@ -211,7 +220,7 @@ public class AllUsers extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(table);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 750, 330));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 220, 770, 330));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,7 +230,7 @@ public class AllUsers extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hotelbg.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 830, 490));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 860, 490));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/bg.PNG"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -327,7 +336,53 @@ public class AllUsers extends javax.swing.JFrame {
     
    
     }//GEN-LAST:event_tableComponentShown
+ 
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        // TODO add your handling code here:
+        
 
+        DefaultTableModel model = (DefaultTableModel) this.table.getModel();
+        int index =table.getSelectedRow();
+        JTable source = (JTable) evt.getSource();
+        int row = source.rowAtPoint(evt.getPoint());
+        int roomNumber = parseInt(table.getModel().getValueAt(row, 0).toString());
+        
+       try
+        {
+              int select = index; 
+              if (select == index){
+              model.removeRow(index);
+              int question = JOptionPane.showConfirmDialog(null, "Do really want to delete this data?","Select",JOptionPane.YES_NO_OPTION);
+              try
+              {
+                  //Delete the data from database
+                  if(question == 0)
+                  {
+                      String deleteString = "DELETE FROM room WHERE roomNumber ='"+roomNumber+"'";
+                      InsertUpdateDelete.setData(deleteString,"\"Deleted Successfully!\" ");
+                      
+                  }else
+                  {
+                      new AllUsers().setVisible(true);
+                  }
+                          
+              }catch(Exception e)
+              {
+                   JOptionPane.showMessageDialog(null, e);
+              }
+             
+            }else {
+              JOptionPane.showMessageDialog(null, "Unable To Delete");
+        }
+           
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+    }//GEN-LAST:event_tableMouseClicked
+ 
     /**
      * @param args the command line arguments
      */

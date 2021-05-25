@@ -191,7 +191,7 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         allotbtn.setBackground(new java.awt.Color(0, 0, 204));
         allotbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         allotbtn.setForeground(new java.awt.Color(255, 255, 255));
-        allotbtn.setText("Allote Room");
+        allotbtn.setText("Book Room");
         allotbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 allotbtnActionPerformed(evt);

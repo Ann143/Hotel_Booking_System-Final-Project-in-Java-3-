@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 03:33 PM
+-- Generation Time: May 25, 2021 at 11:25 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -98,8 +98,12 @@ INSERT INTO `room` (`RoomId`, `RoomNumber`, `RoomType`, `Bed`, `Price`, `Status`
 (91, '07', 'Air Condition', 'Single', 300, 'Not Booked'),
 (92, '08', 'Not Air Condition', 'Double', 800, 'Not Booked'),
 (93, '09', 'Air Condition', 'Triple', 2500, 'Not Booked'),
-(94, '10', 'Air Condition', 'Single', 500, 'Not Booked'),
-(95, '11', 'Air Condition', 'Single', 300, 'Not Booked');
+(97, '10', 'Air Condition', 'Single', 300, 'Not Booked'),
+(98, '11', 'Not Air Condition', 'Single', 200, 'Not Booked'),
+(102, '12', 'Air Condition', 'Double', 1000, 'Not Booked'),
+(103, '13', 'Not Air Condition', 'Double', 600, 'Not Booked'),
+(104, '14', 'Air Condition', 'Triple', 3500, 'Not Booked'),
+(105, '15', 'Not Air Condition', 'Triple', 2000, 'Not Booked');
 
 --
 -- Indexes for dumped tables
@@ -143,7 +147,7 @@ ALTER TABLE `food`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `RoomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `RoomId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

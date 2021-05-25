@@ -36,13 +36,14 @@ public class Statistics extends javax.swing.JFrame {
         totalRoom.setText(String.valueOf(getAllRoom()));
         occupied.setText(String.valueOf(getAllRoom() - getAvailableRoom()));
         revenue.setText(String.valueOf(getTotalRevenue()));     
-        
+        foodTotal.setText(String.valueOf(getFoodTotalRevenue()));
       
         totalRoom.setEditable(false);
         Date.setEditable(false);
         available.setEditable(false);
         occupied.setEditable(false);
         revenue.setEditable(false);
+        foodTotal.setEditable(false);
        
     }
     
@@ -68,7 +69,10 @@ public class Statistics extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        foodTotal = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -80,7 +84,7 @@ public class Statistics extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("Statistics");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -91,14 +95,13 @@ public class Statistics extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 270, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Total Rooms: ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 90, -1, -1));
 
         totalRoom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        totalRoom.setText("10");
         totalRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 totalRoomActionPerformed(evt);
@@ -108,36 +111,51 @@ public class Statistics extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Date");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 60, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 60, 20));
 
         Date.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 160, -1));
+        getContentPane().add(Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 160, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Total Rooms Available");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, 20));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, 20));
 
         available.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(available, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 190, -1));
+        getContentPane().add(available, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 190, -1));
 
         occupied.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(occupied, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 200, -1));
+        occupied.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                occupiedActionPerformed(evt);
+            }
+        });
+        getContentPane().add(occupied, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 200, -1));
 
         revenue.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(revenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 160, -1));
+        getContentPane().add(revenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 160, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Total Revenue");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 170, -1, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, -1, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Total Rooms Occupied");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, 20));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, -1, 20));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 215, -1, -1));
+
+        foodTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        getContentPane().add(foodTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 280, 190, 30));
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("Total Food Revenue:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 190, 30));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat.png"))); // NOI18N
         jLabel9.setText("jLabel9");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 310));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 340));
+
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -157,6 +175,10 @@ public class Statistics extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_totalRoomActionPerformed
+
+    private void occupiedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_occupiedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_occupiedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,18 +256,35 @@ public class Statistics extends javax.swing.JFrame {
         }
         return value;
     }
+    
+     public double getFoodTotalRevenue() {
+        double value = 0;
+        ResultSet rs = Select.getData("select total from food");
+        try {
+            while (rs.next()) {
+                value += Double.parseDouble(rs.getString("total"));
+            }
+            rs.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return value;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Date;
     private javax.swing.JTextField available;
+    private javax.swing.JTextField foodTotal;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField occupied;
     private javax.swing.JTextField revenue;
