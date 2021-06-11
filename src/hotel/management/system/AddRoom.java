@@ -39,9 +39,9 @@ public class AddRoom extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         price = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         addbtn = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,16 +86,16 @@ public class AddRoom extends javax.swing.JFrame {
         jLabel5.setText("Add Room");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(297, 14, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setBackground(new java.awt.Color(255, 0, 0));
+        backButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
+        getContentPane().add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, -1, -1));
 
         addbtn.setBackground(new java.awt.Color(0, 153, 153));
         addbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -108,16 +108,16 @@ public class AddRoom extends javax.swing.JFrame {
         });
         getContentPane().add(addbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 342, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(204, 0, 0));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Cancel");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cancel.setBackground(new java.awt.Color(204, 0, 0));
+        cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 255, 255));
+        cancel.setText("Cancel");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
+        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addroom.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -151,18 +151,18 @@ public class AddRoom extends javax.swing.JFrame {
         
     }//GEN-LAST:event_addbtnActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
            setVisible(false);
            new AllUsers().setVisible(true);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new AddRoom().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,9 +201,9 @@ public class AddRoom extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addbtn;
+    private javax.swing.JButton backButton;
     private javax.swing.JComboBox<String> bed;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

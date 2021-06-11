@@ -43,7 +43,7 @@ public class UpdateRoom extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,16 +84,16 @@ public class UpdateRoom extends javax.swing.JFrame {
         jLabel4.setText("Update Room");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 11, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        cancel.setBackground(new java.awt.Color(204, 0, 0));
+        cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 255, 255));
+        cancel.setText("Cancel");
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, 30));
+        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addroom.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
@@ -109,11 +109,12 @@ public class UpdateRoom extends javax.swing.JFrame {
         setUpdateRoom();
     }//GEN-LAST:event_updateRoomMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
         // TODO add your handling code here:
+        
          setVisible(false);
         new AllUsers().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_cancelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -181,7 +182,7 @@ public class UpdateRoom extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField bed;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton cancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

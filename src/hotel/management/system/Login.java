@@ -63,9 +63,9 @@ public class Login extends javax.swing.JFrame {
         loginBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
-        loginBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginBtnActionPerformed(evt);
+        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginBtnMouseClicked(evt);
             }
         });
         getContentPane().add(loginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 70, 30));
@@ -105,44 +105,26 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailtxtActionPerformed
 
-    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        int check =0;
+    private void loginBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMouseClicked
+
+        boolean check = false;
         String email =emailtxt.getText();
         String password = passtext.getText();
         if(email.equals("") || password.equals(""))
         {
-            check=1;
+            check= true;
             JOptionPane.showMessageDialog(null, "Every Field Is Required!");
         }
         else if(email.equals("Mery-an") && password.equals("admin"))
         {
-            check=1;
+            check=true;
             setVisible(false);
             new AllUsers().setVisible(true);
+        }else{
+             JOptionPane.showMessageDialog(null, "Incorrect Email or Password!");
         }
-        else
-        {
-            ResultSet rs=Select.getData("select * from users where Email = '"+email+"' and Password = '"+password+"'");
-        try
-        {
-            if(rs.next())
-            {
-                check=1;
-                
-                  new AllUsers().setVisible(true);
-                    
-            }
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null,e);
-        }
-        }
-        
-        if (check==0){
-            JOptionPane.showMessageDialog(null, "Incorrect Email or Password!");
-        }
-    }//GEN-LAST:event_loginBtnActionPerformed
+       
+    }//GEN-LAST:event_loginBtnMouseClicked
 
     /**
      * @param args the command line arguments

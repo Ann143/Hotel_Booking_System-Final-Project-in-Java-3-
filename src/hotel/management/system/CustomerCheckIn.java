@@ -36,16 +36,16 @@ public class CustomerCheckIn extends javax.swing.JFrame {
     
     public void roomDetails()
     {
-        jComboBox3.removeAllItems();
+        RoomNumber.removeAllItems();
         PriceTxt.setText("");
-        bed=(String)jComboBox2.getSelectedItem();
-        roomType=(String)jComboBox4.getSelectedItem();
+        bed=(String)Bed.getSelectedItem();
+        roomType=(String)RoomType.getSelectedItem();
         try
         {
             ResultSet rs=Select.getData("select * from room where Bed='"+bed+"' and RoomType='"+roomType+"' and Status ='Not Booked'");
             while(rs.next())
             {
-                jComboBox3.addItem(rs.getString(2));
+                RoomNumber.addItem(rs.getString(2));
             }
         }
         catch(Exception e)
@@ -67,34 +67,34 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        MobileNumber = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        Nationality = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        GenderField = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        idnumber = new javax.swing.JTextField();
+        emailField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        Address = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         datetxt = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        Bed = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        allotbtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        bookRoom = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
+        RoomNumber = new javax.swing.JComboBox<>();
+        RoomType = new javax.swing.JComboBox<>();
         PriceTxt = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        IDType = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        numberofStay = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,23 +117,23 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jLabel3.setText("Mobile Number");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 318, -1));
+        MobileNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(MobileNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 318, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Nationality");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 318, -1));
+        Nationality.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(Nationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 318, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Gender");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 318, -1));
+        GenderField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        GenderField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        getContentPane().add(GenderField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 318, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Email");
@@ -143,18 +143,18 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jLabel7.setText("ID Number");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, -1, 20));
 
-        jTextField5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 303, -1));
+        idnumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(idnumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 303, -1));
 
-        jTextField4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 318, -1));
+        emailField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 318, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setText("Address");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, -1));
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 303, -1));
+        Address.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(Address, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, 303, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Check In Date (Today)");
@@ -167,14 +167,14 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jLabel10.setText("Bed");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 170, -1, -1));
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Double", "Triple" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        Bed.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Bed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Single", "Double", "Triple" }));
+        Bed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                BedActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, 281, -1));
+        getContentPane().add(Bed, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 190, 281, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Room Type");
@@ -188,82 +188,87 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         jLabel13.setText("Price");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 360, -1, -1));
 
-        allotbtn.setBackground(new java.awt.Color(0, 0, 204));
-        allotbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        allotbtn.setForeground(new java.awt.Color(255, 255, 255));
-        allotbtn.setText("Book Room");
-        allotbtn.addActionListener(new java.awt.event.ActionListener() {
+        bookRoom.setBackground(new java.awt.Color(0, 0, 204));
+        bookRoom.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bookRoom.setForeground(new java.awt.Color(255, 255, 255));
+        bookRoom.setText("Book Room");
+        bookRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                allotbtnActionPerformed(evt);
+                bookRoomActionPerformed(evt);
             }
         });
-        getContentPane().add(allotbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 430, -1, -1));
+        getContentPane().add(bookRoom, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 430, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(102, 0, 0));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Cancel");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        cancel.setBackground(new java.awt.Color(102, 0, 0));
+        cancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 255, 255));
+        cancel.setText("Cancel");
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 430, -1, -1));
+        cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 430, -1, -1));
 
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        RoomNumber.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        RoomNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                RoomNumberActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, 281, -1));
+        getContentPane().add(RoomNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 320, 281, -1));
 
-        jComboBox4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Air Condition", "Not Air Condition" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        RoomType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        RoomType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Air Condition", "Not Air Condition" }));
+        RoomType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                RoomTypeActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 281, -1));
+        getContentPane().add(RoomType, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 281, -1));
 
         PriceTxt.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(PriceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 380, 280, -1));
 
-        jButton3.setBackground(new java.awt.Color(204, 0, 0));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Back");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(204, 0, 0));
+        backBtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 480, -1, -1));
+        getContentPane().add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 480, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setText("ID Type");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        IDType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        IDType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                IDTypeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 300, -1));
+        getContentPane().add(IDType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 300, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("Number of Days Stay");
         getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, -1, -1));
 
-        jTextField7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        numberofStay.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        numberofStay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                numberofStayActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 300, -1));
+        getContentPane().add(numberofStay, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 300, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkIn.jpg"))); // NOI18N
@@ -274,29 +279,29 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new AllUsers().setVisible(true);
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
         
         setVisible(false);
         new CustomerCheckIn().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cancelActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void RoomTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoomTypeActionPerformed
         // TODO add your handling code here:
         roomDetails();
         
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_RoomTypeActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void RoomNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoomNumberActionPerformed
         // TODO add your handling code here:
-       roomNo = (String)jComboBox3.getSelectedItem();
+       roomNo = (String)RoomNumber.getSelectedItem();
         try
         {
             ResultSet rs =Select.getData("select * from room  where RoomNumber='"+roomNo+"'");
@@ -309,29 +314,29 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_RoomNumberActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void BedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BedActionPerformed
         // TODO add your handling code here:
          roomDetails();
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_BedActionPerformed
 
-    private void allotbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allotbtnActionPerformed
+    private void bookRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRoomActionPerformed
         // TODO add your handling code here:
 //        int id=1;
         String name=this.name.getText();
-        String mobileNumber=jTextField2.getText();
-        String nationality=jTextField3.getText();
-        String gender=(String)jComboBox1.getSelectedItem();
-        String email=jTextField4.getText();
-        String idType =jTextField1.getText();
-        String idProof=jTextField5.getText();
-        String noDays =jTextField7.getText();
-        String address=jTextField6.getText();
+        String mobileNumber=MobileNumber.getText();
+        String nationality=Nationality.getText();
+        String gender=(String)GenderField.getSelectedItem();
+        String email=emailField.getText();
+        String idType =IDType.getText();
+        String idProof=idnumber.getText();
+        String noDays =numberofStay.getText();
+        String address=Address.getText();
         String checkIN=datetxt.getText();
-        String bed=(String)jComboBox2.getSelectedItem();
-        String roomType=(String)jComboBox4.getSelectedItem();
-        String roomNo=(String)jComboBox3.getSelectedItem();
+        String bed=(String)Bed.getSelectedItem();
+        String roomType=(String)RoomType.getSelectedItem();
+        String roomNo=(String)RoomNumber.getSelectedItem();
         String price =PriceTxt.getText();
         String Query = "select max(Id) from customer";  
         
@@ -339,7 +344,6 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         {
             Integer.parseInt(mobileNumber); 
             Integer.parseInt(idProof); 
-            Integer.parseInt(noDays); 
             
             try
             {
@@ -372,15 +376,20 @@ public class CustomerCheckIn extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_allotbtnActionPerformed
+    }//GEN-LAST:event_bookRoomActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void IDTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDTypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_IDTypeActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void numberofStayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberofStayActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_numberofStayActionPerformed
+
+    private void cancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cancelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -418,15 +427,21 @@ public class CustomerCheckIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Address;
+    private javax.swing.JComboBox<String> Bed;
+    private javax.swing.JComboBox<String> GenderField;
+    private javax.swing.JTextField IDType;
+    private javax.swing.JTextField MobileNumber;
+    private javax.swing.JTextField Nationality;
     private javax.swing.JTextField PriceTxt;
-    private javax.swing.JButton allotbtn;
+    private javax.swing.JComboBox<String> RoomNumber;
+    private javax.swing.JComboBox<String> RoomType;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JButton bookRoom;
+    private javax.swing.JButton cancel;
     private javax.swing.JTextField datetxt;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JTextField emailField;
+    private javax.swing.JTextField idnumber;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -443,14 +458,8 @@ public class CustomerCheckIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField name;
+    private javax.swing.JTextField numberofStay;
     // End of variables declaration//GEN-END:variables
 
     private String myFormat(Date time) {

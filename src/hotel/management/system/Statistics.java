@@ -57,7 +57,7 @@ public class Statistics extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        backBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         totalRoom = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -86,16 +86,16 @@ public class Statistics extends javax.swing.JFrame {
         jLabel1.setText("Statistics");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        backBtn.setBackground(new java.awt.Color(204, 0, 0));
+        backBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        backBtn.setForeground(new java.awt.Color(255, 255, 255));
+        backBtn.setText("Back");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, -1, -1));
+        getContentPane().add(backBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Total Rooms: ");
@@ -166,10 +166,10 @@ public class Statistics extends javax.swing.JFrame {
 
     }//GEN-LAST:event_formComponentShown
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
         setVisible(false);
         new AllUsers().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backBtnActionPerformed
 
     private void totalRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalRoomActionPerformed
 
@@ -274,8 +274,8 @@ public class Statistics extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Date;
     private javax.swing.JTextField available;
+    private javax.swing.JButton backBtn;
     private javax.swing.JTextField foodTotal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

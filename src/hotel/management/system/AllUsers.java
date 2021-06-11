@@ -52,11 +52,11 @@ public class AllUsers extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         exit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        addroombtn = new javax.swing.JButton();
+        listcheckoutBtn = new javax.swing.JButton();
+        listcheckinBtn = new javax.swing.JButton();
+        servicesbtn = new javax.swing.JButton();
+        statisticsbtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
@@ -78,9 +78,9 @@ public class AllUsers extends javax.swing.JFrame {
         manage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         manage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/room.png"))); // NOI18N
         manage.setText("List Of Room");
-        manage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manageActionPerformed(evt);
+        manage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageMouseClicked(evt);
             }
         });
         getContentPane().add(manage, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 320, 50));
@@ -89,9 +89,9 @@ public class AllUsers extends javax.swing.JFrame {
         checkIn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkin.png"))); // NOI18N
         checkIn.setText("Check In");
-        checkIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkInActionPerformed(evt);
+        checkIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkInMouseClicked(evt);
             }
         });
         getContentPane().add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 320, 50));
@@ -100,9 +100,9 @@ public class AllUsers extends javax.swing.JFrame {
         checkOut.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         checkOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/checkout.png"))); // NOI18N
         checkOut.setText("Check Out");
-        checkOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkOutActionPerformed(evt);
+        checkOut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkOutMouseClicked(evt);
             }
         });
         getContentPane().add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 320, 50));
@@ -112,9 +112,9 @@ public class AllUsers extends javax.swing.JFrame {
         logout.setForeground(new java.awt.Color(255, 255, 255));
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logout.png"))); // NOI18N
         logout.setText("Logout");
-        logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutActionPerformed(evt);
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
             }
         });
         getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 20, 140, 50));
@@ -124,9 +124,9 @@ public class AllUsers extends javax.swing.JFrame {
         exit.setForeground(new java.awt.Color(255, 255, 255));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/exit.png"))); // NOI18N
         exit.setText("Exit");
-        exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitMouseClicked(evt);
             }
         });
         getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 20, 110, 50));
@@ -136,65 +136,60 @@ public class AllUsers extends javax.swing.JFrame {
         jLabel2.setText("WELCOME TO HOTEL BOOKING SYSTEM");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 760, 60));
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 153));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addroom.png"))); // NOI18N
-        jButton1.setText("Add Room");
-        jButton1.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                jButton1ComponentHidden(evt);
+        addroombtn.setBackground(new java.awt.Color(255, 153, 153));
+        addroombtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        addroombtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addroom.png"))); // NOI18N
+        addroombtn.setText("Add Room");
+        addroombtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addroombtnMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 320, 50));
+        getContentPane().add(addroombtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 320, 50));
 
-        jButton3.setBackground(new java.awt.Color(255, 153, 153));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
-        jButton3.setText("List of Customer Check Out");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        listcheckoutBtn.setBackground(new java.awt.Color(255, 153, 153));
+        listcheckoutBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        listcheckoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
+        listcheckoutBtn.setText("List of Customer Check Out");
+        listcheckoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listcheckoutBtnMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 320, 50));
+        getContentPane().add(listcheckoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 320, 50));
 
-        jButton2.setBackground(new java.awt.Color(255, 153, 153));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
-        jButton2.setText("List of Customer Check In");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        listcheckinBtn.setBackground(new java.awt.Color(255, 153, 153));
+        listcheckinBtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        listcheckinBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
+        listcheckinBtn.setText("List of Customer Check In");
+        listcheckinBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listcheckinBtnMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 320, 50));
+        getContentPane().add(listcheckinBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 320, 50));
 
-        jButton5.setBackground(new java.awt.Color(255, 153, 153));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
-        jButton5.setText("Services");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        servicesbtn.setBackground(new java.awt.Color(255, 153, 153));
+        servicesbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        servicesbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/services.png"))); // NOI18N
+        servicesbtn.setText("Services");
+        servicesbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                servicesbtnMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 320, 50));
+        getContentPane().add(servicesbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 320, 50));
 
-        jButton4.setBackground(new java.awt.Color(255, 153, 153));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat_icon.png"))); // NOI18N
-        jButton4.setText("Statistics");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        statisticsbtn.setBackground(new java.awt.Color(255, 153, 153));
+        statisticsbtn.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        statisticsbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/stat_icon.png"))); // NOI18N
+        statisticsbtn.setText("Statistics");
+        statisticsbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                statisticsbtnMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 320, 50));
+        getContentPane().add(statisticsbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 320, 50));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, -1, -1));
 
         table.setBackground(new java.awt.Color(255, 153, 153));
@@ -211,11 +206,6 @@ public class AllUsers extends javax.swing.JFrame {
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableMouseClicked(evt);
-            }
-        });
-        table.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                tableComponentShown(evt);
             }
         });
         jScrollPane2.setViewportView(table);
@@ -240,77 +230,6 @@ public class AllUsers extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void manageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageActionPerformed
-        // TODO add your handling code here:
-        new AllUsers().setVisible(true);
-    }//GEN-LAST:event_manageActionPerformed
-
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to logout?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
-            setVisible(false);
-            new Login().setVisible(true);
-        }
-    }//GEN-LAST:event_logoutActionPerformed
-
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close application?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
-            System.exit(0);
-        }
-
-
-    }//GEN-LAST:event_exitActionPerformed
-
-    private void checkInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInActionPerformed
-        // TODO add your handling code here:
-        setVisible(false);
-        new CustomerCheckIn().setVisible(true);
-
-
-    }//GEN-LAST:event_checkInActionPerformed
-
-    private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
-        // TODO add your handling code here:
-        setVisible(false);
-        new CustomerCheckOut().setVisible(true);
-
-
-    }//GEN-LAST:event_checkOutActionPerformed
-
-    private void jButton1ComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jButton1ComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ComponentHidden
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        setVisible(false);
-        new ListCheckIn().setVisible(true);
-
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        setVisible(false);
-        new AddRoom().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        setVisible(false);
-        new CustomersDetailsBills().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        setVisible(false);
-        new Services().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        setVisible(false);
-        new Statistics().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         ResultSet rs = Select.getData("select * from room");
         DefaultTableModel model = (DefaultTableModel) table.getModel();
@@ -320,17 +239,11 @@ public class AllUsers extends javax.swing.JFrame {
             }
             rs.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "You are not connected to database");
         }
 
     }//GEN-LAST:event_formComponentShown
 
-
-    private void tableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableComponentShown
-
-
-    }//GEN-LAST:event_tableComponentShown
-     
  
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
 
@@ -349,7 +262,7 @@ public class AllUsers extends javax.swing.JFrame {
 
         System.out.println(index);
         try {
-                try {
+              
                     //Delete the data from database
                     if (delete.isSelected() && x != -1) {
                         String deleteString = "DELETE FROM room WHERE RoomNumber ='" + roomNumber + "'";
@@ -370,57 +283,76 @@ public class AllUsers extends javax.swing.JFrame {
                          
                     }
 
-                } catch (Exception e) {
-                    JOptionPane.showMessageDialog(null, e);
-                }
-
-        
-
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
 
-//        DefaultTableModel model = (DefaultTableModel) this.table.getModel();
-//        int index =table.getSelectedRow();
-//        JTable source = (JTable) evt.getSource();
-//        int row = source.rowAtPoint(evt.getPoint());
-//        int roomNumber = parseInt(table.getModel().getValueAt(row, 0).toString());
-//        
-//       try
-//        {
-//              int select = index; 
-//              if (select == index){
-//              model.removeRow(index);
-//              int question = JOptionPane.showConfirmDialog(null, "Do really want to delete this data?","Select",JOptionPane.YES_NO_OPTION);
-//              try
-//              {
-//                  //Delete the data from database
-//                  if(question == 0)
-//                  {
-//                      String deleteString = "DELETE FROM room WHERE roomNumber ='"+roomNumber+"'";
-//                      InsertUpdateDelete.setData(deleteString,"\"Deleted Successfully!\" ");
-//                      
-//                  }else
-//                  {
-//                      new AllUsers().setVisible(true);
-//                  }
-//                          
-//              }catch(Exception e)
-//              {
-//                   JOptionPane.showMessageDialog(null, e);
-//              }
-//             
-//            }else {
-//              JOptionPane.showMessageDialog(null, "Unable To Delete");
-//        }
-//           
-//        }
-//        catch(Exception e)
-//        {
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-
     }//GEN-LAST:event_tableMouseClicked
+
+    private void manageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageMouseClicked
+        // TODO add your handling code here:
+                this.setVisible(false);
+               new AllUsers().setVisible(true);
+    }//GEN-LAST:event_manageMouseClicked
+
+    private void addroombtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addroombtnMouseClicked
+        // TODO add your handling code here:
+          this.setVisible(false);
+          new AddRoom().setVisible(true);
+    }//GEN-LAST:event_addroombtnMouseClicked
+
+    private void checkInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkInMouseClicked
+        // TODO add your handling code here:
+         this.setVisible(false);
+          new CustomerCheckIn().setVisible(true);
+    }//GEN-LAST:event_checkInMouseClicked
+
+    private void checkOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkOutMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+          new CustomerCheckOut().setVisible(true);
+    }//GEN-LAST:event_checkOutMouseClicked
+
+    private void servicesbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_servicesbtnMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Services().setVisible(true);
+    }//GEN-LAST:event_servicesbtnMouseClicked
+
+    private void statisticsbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statisticsbtnMouseClicked
+        // TODO add your handling code here:
+         this.setVisible(false);
+          new Statistics().setVisible(true);
+    }//GEN-LAST:event_statisticsbtnMouseClicked
+
+    private void listcheckinBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listcheckinBtnMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+          new ListCheckIn().setVisible(true);
+    }//GEN-LAST:event_listcheckinBtnMouseClicked
+
+    private void listcheckoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listcheckoutBtnMouseClicked
+        // TODO add your handling code here:
+         this.setVisible(false);
+          new CustomersDetailsBills().setVisible(true);
+    }//GEN-LAST:event_listcheckoutBtnMouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        // TODO add your handling code here:
+         int a = JOptionPane.showConfirmDialog(null, "Do you really want to logout?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            setVisible(false);
+            new Login().setVisible(true);
+        }
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
+        // TODO add your handling code here:
+         int a = JOptionPane.showConfirmDialog(null, "Do you really want to close application?", "Select", JOptionPane.YES_NO_OPTION);
+        if (a == 0) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_exitMouseClicked
 
     /**
      * @param args the command line arguments
@@ -458,14 +390,10 @@ public class AllUsers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addroombtn;
     private javax.swing.JButton checkIn;
     private javax.swing.JButton checkOut;
     private javax.swing.JButton exit;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -473,8 +401,12 @@ public class AllUsers extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton listcheckinBtn;
+    private javax.swing.JButton listcheckoutBtn;
     private javax.swing.JButton logout;
     private javax.swing.JButton manage;
+    private javax.swing.JButton servicesbtn;
+    private javax.swing.JButton statisticsbtn;
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }
